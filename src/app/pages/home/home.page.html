@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de Establecimientos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form" novalidate="novalidate">
+    <ion-item>
+      <ion-label position="floating">Razón social</ion-label>
+      <ion-input formControlName="razonsocial"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Identificador</ion-label>
+      <ion-input formControlName="identificador"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input formControlName="direccion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Identificador 2</ion-label>
+      <ion-input formControlName="identificador2"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Latitud</ion-label>
+      <ion-input formControlName="latitud" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Longitud</ion-label>
+      <ion-input formControlName="longitud" type="number"></ion-input>
+    </ion-item>
+    <ion-button (click)="guardarEstablecimiento()">Guardar</ion-button>
+  </form>
+</ion-content>
