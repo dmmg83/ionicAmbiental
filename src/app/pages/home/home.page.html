@@ -1,10 +1,16 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Registro de Establecimientos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="presentAlert()">
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <h1>Datos del establecimiento</h1>
   <form [formGroup]="form" novalidate="novalidate">
     <ion-item>
       <ion-label position="floating">Razón social</ion-label>
@@ -22,14 +28,25 @@
       <ion-label position="floating">Identificador 2</ion-label>
       <ion-input formControlName="identificador2"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Latitud</ion-label>
-      <ion-input formControlName="latitud" type="number"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Longitud</ion-label>
-      <ion-input formControlName="longitud" type="number"></ion-input>
-    </ion-item>
-    <ion-button (click)="guardarEstablecimiento()">Guardar</ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Latitud</ion-label>
+            <ion-input formControlName="latitud" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Longitud</ion-label>
+            <ion-input formControlName="longitud" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="center-content">
+      <ion-button (click)="obtenerUbicacion()">Obtener ubicación</ion-button>
+      <ion-button (click)="guardarEstablecimiento()" color="success">Guardar</ion-button>
+    </div>
   </form>
 </ion-content>

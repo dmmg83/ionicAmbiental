@@ -12,12 +12,13 @@ export class AlertService {
     private alertController:AlertController
   ) { }
 
-  async presentAlert(header:string = null, buttons = null, inputs = null, backdropDismiss = false){
+  async presentAlert(header:string = null, buttons = null, inputs = null, backdropDismiss = false, message = null){
     this.alert = await this.alertController.create({
       header: header,
       buttons: buttons,
       inputs: inputs,
-      backdropDismiss: backdropDismiss
+      backdropDismiss: backdropDismiss,
+      message: message
     });
     await this.alert.present();
   }
